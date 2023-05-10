@@ -13,7 +13,7 @@ class InboxScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         centerTitle: true,
@@ -155,11 +155,14 @@ class InboxScreen extends StatelessWidget {
                   border: Border.all(color: Colors.white),
                   shape: BoxShape.circle,
                 ),
-                child: const Padding(
+                child:  Padding(
                   padding: EdgeInsets.all(2),
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1682917265562-139c5aa7070c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
+                  child: InkWell(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen()));
+},
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://images.unsplash.com/photo-1682917265562-139c5aa7070c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
+                    ),
                   ),
                 ),
               ),

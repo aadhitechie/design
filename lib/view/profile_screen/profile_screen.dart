@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         centerTitle: true,

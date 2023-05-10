@@ -1,4 +1,3 @@
-import 'package:designs/view/otp_screen/number_otp_screen.dart';
 import 'package:designs/view/starting_screen/starting_screen.dart';
 import 'package:flutter/material.dart';
 
