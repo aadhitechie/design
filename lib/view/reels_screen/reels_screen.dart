@@ -1,4 +1,5 @@
 import 'package:designs/view/inbox_screen/inbox_screen.dart';
+import 'package:designs/view/profile_screen/profile_screen.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -68,15 +69,15 @@ class _ReelsScreenState extends State<ReelsScreen> {
       ),
       body: RefreshIndicator(
         onRefresh: () async {
-          setState(() {
-            
-          });
+          setState(() {});
         },
         child: PageView.builder(
           scrollDirection: Axis.vertical,
           itemCount: lisOfImages.length,
           itemBuilder: (context, index) {
-            return ReelsWidget(imageUrl: imageUrl,);
+            return ReelsWidget(
+              imageUrl: imageUrl,
+            );
           },
         ),
       ),
@@ -99,11 +100,20 @@ class _ReelsScreenState extends State<ReelsScreen> {
                   border: Border.all(color: Colors.white),
                   shape: BoxShape.circle,
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.all(2),
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1682917265562-139c5aa7070c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()),
+                      );
+                    },
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://images.unsplash.com/photo-1682917265562-139c5aa7070c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
+                    ),
                   ),
                 ),
               ),
@@ -127,7 +137,10 @@ class _ReelsWidgetState extends State<ReelsWidget> {
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.network('${widget.imageUrl}${DateTime.now().millisecondsSinceEpoch}%27',fit: BoxFit.cover,),
+          child: Image.network(
+            '${widget.imageUrl}${DateTime.now().millisecondsSinceEpoch}%27',
+            fit: BoxFit.cover,
+          ),
         ),
         Positioned(
             bottom: 25,
