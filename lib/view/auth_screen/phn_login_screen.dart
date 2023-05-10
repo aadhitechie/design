@@ -20,102 +20,104 @@ class PhnLoginScreen extends StatelessWidget {
       backgroundColor: kBlackcolor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 100,
-              ),
-              SizedBox(width: 300, child: Image.asset('lib/core/pic1.png')),
-              TextFieldd(
-                hintText: 'Email',
-                keyboardType: TextInputType.text,
-                obsecure: false,
-              ),
-              const SizedBox(height: 25),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: themeColor,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 11.0, top: 8),
-                      child: Text(
-                        'Phone number',
-                        style: TextStyle(color: themeColor),
-                      ),
+                SizedBox(width: 200, child: Image.asset('lib/core/pic1.png')),
+                TextFieldd(
+                  hintText: 'Email',
+                  keyboardType: TextInputType.text,
+                  obsecure: false,
+                ),
+                const SizedBox(height: 25),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: themeColor,
+                      width: 2.0,
                     ),
-                    TextField(
-                      style: TextStyle(color: kWhitecolor),
-                      keyboardType: TextInputType.number,
-                      decoration:  InputDecoration(
-                        prefixIcon: Padding(
-                          padding: EdgeInsets.only(left: 8),
-                          child: Flag.fromCode(
-                            FlagsCode.US,
-                            height: 10,
-                            width: 10,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 11.0, top: 8),
+                        child: Text(
+                          'Phone number',
+                          style: TextStyle(color: themeColor),
+                        ),
+                      ),
+                      TextField(
+                        style: TextStyle(color: kWhitecolor),
+                        keyboardType: TextInputType.number,
+                        decoration:  InputDecoration(
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.only(left: 8),
+                            child: Flag.fromCode(
+                              FlagsCode.US,
+                              height: 10,
+                              width: 10,
+                            ),
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 12.0,
                           ),
                         ),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 16.0,
-                          vertical: 12.0,
-                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 25),
-              ElevatedBtn(
-                onp: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) =>NumberOtpScreen ()));
-},
-                btnName: 'NEXT',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                width: 500,
-                decoration: BoxDecoration(
-                    color: kWhitecolor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: SignInButton(Buttons.Google,
-                    text: 'Continue with google',
-                    elevation: 0,
-                    onPressed: () {}),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
+                const SizedBox(height: 25),
+                ElevatedBtn(
+                  onp: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) =>NumberOtpScreen ()));
+        },
+                  btnName: 'NEXT',
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Container(
                   width: 500,
                   decoration: BoxDecoration(
-                      color: const Color.fromRGBO(63, 113, 255, 10),
+                      color: kWhitecolor,
                       borderRadius: BorderRadius.circular(10)),
-                  child: SignInButton(
-                      text: 'Continue with facebook',
-                      Buttons.FacebookNew,
+                  child: SignInButton(Buttons.Google,
+                      text: 'Continue with google',
                       elevation: 0,
-                      onPressed: () {})),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+                      onPressed: () {}),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    width: 500,
+                    decoration: BoxDecoration(
+                        color: const Color.fromRGBO(63, 113, 255, 10),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: SignInButton(
+                        text: 'Continue with facebook',
+                        Buttons.FacebookNew,
+                        elevation: 0,
+                        onPressed: () {})),
+                const SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
         ),
       ),

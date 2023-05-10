@@ -17,40 +17,42 @@ class PersonalDetailsScreen extends StatelessWidget {
       backgroundColor: kBlackcolor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 100,
-              ),
-              SizedBox(width: 300, child: Image.asset('lib/core/pic1.png')),
-              const TextFieldd(
-                hintText: 'Full Name',
-                keyboardType: TextInputType.text,
-                obsecure: false,
-              ),
-              const SizedBox(height: 25),
-              const TextFieldd(
-                  hintText: 'Password',
-                  keyboardType: TextInputType.streetAddress,
-                  obsecure: true),
-              const SizedBox(height: 25),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                SizedBox(width: 300, child: Image.asset('lib/core/pic1.png')),
                 const TextFieldd(
-                  hintText: 'Date of birth',
-                  keyboardType: TextInputType.streetAddress,
-                  obsecure: true),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'You must be over 18 years old',
-                style: TextStyle(color: kWhitecolor),
-              ),
-              SizedBox(height: 35,),
-              ElevatedBtn(btnName: 'NEXT', onp: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => UsernameScreen()));
-})
-            ],
+                  hintText: 'Full Name',
+                  keyboardType: TextInputType.text,
+                  obsecure: false,
+                ),
+                const SizedBox(height: 25),
+                const TextFieldd(
+                    hintText: 'Password',
+                    keyboardType: TextInputType.streetAddress,
+                    obsecure: true),
+                const SizedBox(height: 25),
+                  const TextFieldd(
+                    hintText: 'Date of birth',
+                    keyboardType: TextInputType.streetAddress,
+                    obsecure: true),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'You must be over 18 years old',
+                  style: TextStyle(color: kWhitecolor),
+                ),
+                SizedBox(height: 35,),
+                ElevatedBtn(btnName: 'NEXT', onp: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => UsernameScreen()));
+        })
+              ],
+            ),
           ),
         ),
       ),
